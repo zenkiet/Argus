@@ -1,8 +1,6 @@
 services:
   argus:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: releaseargus/argus:latest
     container_name: argus
     restart: unless-stopped
     volumes:
