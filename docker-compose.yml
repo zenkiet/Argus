@@ -1,0 +1,16 @@
+services:
+  argus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: argus
+    restart: unless-stopped
+    volumes:
+      - /mnt/stacks/argus/config.yml:/etc/argus/config.yml
+      - data:/data
+    ports:
+      - "${PORT:-8080}:8080"
+
+volumes:
+  data:
+    driver: local
